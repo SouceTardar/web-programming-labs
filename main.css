@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: black;
+    background: linear-gradient(to right, black, red, green, yellow);
     color: lightgreen;
     padding: 10px;
     font-size: 16px;
@@ -34,7 +34,7 @@ a:hover {
     font-weight: bold;
 }
 
-a:hover {
+a:active {
     color: pink;
     background-color: green;
 }
