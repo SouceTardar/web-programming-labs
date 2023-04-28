@@ -13,6 +13,15 @@
             let result = a + b;
             alert('Сумма' + a + ' и ' + b + ' равна ' + result);
         }   
+        function showAuthor() {
+            let author = 'Авторы страницы:\nШтангауэр Максим Максимович\nКозикциий Владислав Сергеевич';
+            alert(author);
+        }
+
+        function showAuthor2() {
+            let author = 'Здравствуйте пользователи!\nКак вы знаете один из дивизов студента "Сон для слабаков"\nАвторы страницы:\nШтангауэр Максим Максимович\nКозикциий Владислав Сергеевич';
+            alert(author);
+        }
     </script>
     <style>
         .message {
@@ -34,11 +43,11 @@
 
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто авторы страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто авторы страницы</div>
     </main>
 
     <footer>
-        &copy; Штангауэр и Козицкий, ФБИ-12, 2 курс, 2023
+        <div onclick="showAuthor2()">&copy; Штангауэр и Козицкий, ФБИ-12, 2 курс, 2023</div>
     </footer>
 </body>
 </html>
