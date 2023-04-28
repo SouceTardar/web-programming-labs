@@ -12,6 +12,10 @@ header {
     font-size: 16px;
 }
 
+main {
+    margin: 10px 20px;
+}
+
 footer {
     background-color: black;
     color: lightgreen;
