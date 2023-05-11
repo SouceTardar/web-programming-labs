@@ -60,6 +60,17 @@
             output.style.color = textColor;
             output.style.border = borderColor;
         }
+        function buy() {
+            let Ainput = parseInt(Ainput.value);
+            let Ginput = parseInt(Ginput.value);
+            let Oinput = parseInt(Oinput.value);
+            let Dinput = parseInt(Dinput.value);
+            let Binput = parseInt(Binput.value);
+            let summResult = Ainput * 90 + Ginput * 70 + Oinput * 140 + Dinput * 300 + Binput * 80;
+
+            let summResulttext = document.getElementById('summlist');
+            summResulttext.innerHTML = 'Общая цена' $(summResult)
+        }
     </script>
     <style>
         .message {
@@ -75,6 +86,16 @@
             border: 1px solid;
             width: 300px;
             height: 40px;
+        }
+
+
+        .buy-list {
+            margin: 20px;
+            background-color: lime;
+            border: 1px solid; 
+            border-radius: 4px;
+            height: 300px;
+            width: 250px;
         }
     </style>
 </head>
@@ -102,6 +123,15 @@
         </div>
 
         <div id="output"></div>
+
+        <div class="buy-list">
+            <label>Яблоки(90р/шт): <input type="number" value="0" id="Ainput"></label><br>
+            <label>Груша(70р/шт): <input type="number" value="0" id="Ginput"></label><br>
+            <label>Апельсины(140р/шт): <input type="number" value="0" id="Oinput"></label><br>
+            <label>Дыня(300р/шт): <input type="number" value="0" id="Dinput"></label><br>
+            <label>Виноград(80р/кг): <input type="number" value="0" id="Binput"></label><br>
+            <input type="button" value=Рассчитать onclick="buy()">Общая цена: 680 рублей<br>
+        </div>
     </main>
 
     <footer>
