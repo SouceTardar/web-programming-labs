@@ -46,6 +46,22 @@
             transform: rotate(0);
             cursor: pointer;
         }
+        .blockup {
+            cursor: pointer;
+            border: 2px solid;
+            color: rgb(40, 7, 255);
+            border-color: darkmagenta;
+            font-size: 14px;
+            padding: 15px;
+            height: 50px;
+            width: 100px;
+            /* margin: 10px auto; */
+            font-weight: bold;
+            background-color: rgb(0, 255, 0);
+            text-align: center;
+            position: relative;
+            margin: 10px auto;
+        }
     </style>
     <script>
         let number
@@ -137,7 +153,13 @@
                 switcher = true;
             }
         }    
-    
+
+        function blockgiga(div) {
+            let bodyInnerWidth = div.offsetWidth + 50;
+            if (bodyInnerWidth >= 1000) bodyInnerWidth = 100;
+            div.style.width = bodyInnerWidth + 'px';
+        }     
+        
 
     </script>
         
@@ -202,6 +224,10 @@
 
         <div class="block" onclick="spblock(this)">
             Щёлкни на меня 
+        </div>
+
+        <div class="blockup" onclick="blockgiga(this)">
+            Щёлкни
         </div>
     </main>
 
