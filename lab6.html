@@ -24,11 +24,27 @@
         }
 
         .color {
+            background-color: orange;
             border: 1px solid;
             border-radius: 1px;
             width: 200px;
             text-align: center;
             color: green;
+        }
+
+        .block {
+            border: 1px solid;
+            border-radius: 1px;
+            width: 20%;
+            height: 20%;
+            left: 0;
+            margin-top: 50px;
+            text-align: center;
+            line-height: 140px; 
+            background-color: darkgreen;
+            color: orange;
+            transform: rotate(0);
+            cursor: pointer;
         }
     </style>
     <script>
@@ -106,6 +122,22 @@
                 document.getElementById('color-name').innerHTML = 'жёлтый'
             }
         }
+        let switcher = true
+        function spblock(div) {
+            if(switcher == true) {
+                div.style.left = '92%';
+                div.style.transform = 'rotate(4turn)';
+                console.log('слева');
+                switcher = false;
+            }
+            else {
+                div.style.left = '8%';
+                div.style.transform = 'rotate(0)';
+                console.log('справа');
+                switcher = true;
+            }
+        }    
+    
 
     </script>
         
@@ -166,6 +198,10 @@
         <div class="color" ondblclick="changeColor(this)">
             Цвет: <span id="color-name">Жёлтый</span><br>
             Сделайте двойной щелчок, чтобы сменить.
+        </div>
+
+        <div class="block" onclick="spblock(this)">
+            Щёлкни на меня 
         </div>
     </main>
 
