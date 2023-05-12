@@ -22,7 +22,14 @@
             margin-left: 20%;
             padding: 8px;
         }
-        
+
+        .color {
+            border: 1px solid;
+            border-radius: 1px;
+            width: 200px;
+            text-align: center;
+            color: green;
+        }
     </style>
     <script>
         let number
@@ -84,6 +91,22 @@
             screens[0].style.display = 'block';
         }
 
+        function changeColor(div) {
+            if(div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'red';
+                document.getAnimations('color-name').innerHTML = 'красный';
+            }
+
+            else if(div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                document.getElementById('color-name').innerHTML = 'чёрный'
+            }
+            else {
+                div.style.backgroundColor = 'yellow';
+                document.getElementById('color-name').innerHTML = 'жёлтый'
+            }
+        }
+
     </script>
         
     
@@ -138,6 +161,11 @@
             <div>C. Снизу есть подсказки, и не выходите за рамки чисел которые заданы в игре</div>
             <div>D. Веселитесь!</div>
             
+        </div>
+
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">Жёлтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
         </div>
     </main>
 
