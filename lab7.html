@@ -11,21 +11,22 @@
             let blocks = document.getElementById('blocks');
             for(let i = 0; i < 10; i++) {
                 let block = document.createElement('div');
-                block.innerHTML = 'Блок №1' + (i+1) + ': ' + (2 * i**2);
+                block.innerHTML = 'Блок №' + (i+1) + ': ' + (2 * i**2);
                 blocks.appendChild(block);
             }
-            
         }
     </script>
+        
 </head>
 <body>
     <header>
-        НГТУ, ФБ, Лабораторная работа 4
+        НГТУ, ФБ, Лабораторная работа 7
     </header>
     
     <main>
         <button onclick="addBlocks()">Создать блоки</button>
         <div id="blocks"></div>
+
     </main>
 </body>
 </html>
