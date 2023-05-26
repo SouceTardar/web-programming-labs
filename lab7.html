@@ -93,6 +93,37 @@
             }
             mult2.appendChild
         }
+
+        function stocks() {
+            let days = [["15.05.2023"], ["16.05.2023"], ["17.05.2023"], ["18.05.2023"], ["19.05.2023"], ["22.05.2023"], ["23.05.2023"], ["24.05.2023"], ["26.05.2023"], ["26.05.2023"]];
+            let exchange = [1296.00, 1296.20, 1291.60, 1280.00, 1264.00, 1264.40, 1289.60, 1310.00, 1299.00, 1308.40];
+            let razn = ['-', 1296.00 - 1296.20, 1296.20 - 1291.60, 1291.60 - 1280.00, 1280.00 - 1264.00, 1264.00 - 1264.40, 1264.40 - 1289.60, 1289.60 - 1310.00, 1310.00 - 1299.00, 1299.00 - 1308.40]
+            
+            let table = document.getElementById('stocks-today');
+            for(let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td1 = document.createElement('td');
+                td1.innerHTML = days[i]
+                let td2 = document.createElement('td');
+                td2.innerHTML = exchange[i]
+                let td3 = document.createElement('td');
+                td3.innerHTML = razn[i]
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                table.appendChild(tr);
+            }
+            let sum = 0
+            for(let i = 0; i < exchange.length; i++) {
+                sum = sum + exchange[i];
+            }
+            let average = sum / exchange.length;
+            let min = Math.min.apply(Math, exchange)
+            let max = Math.max.apply(Math, exchange)
+
+            document.getElementById('medi').innerHTML = 'Среднее значения: ' + average + '<br />' + 'Минимальное значение: ' + min + '<br />' + 'Максимальное значения: ' + max
+        }
+        
     </script>
         
 </head>
@@ -122,6 +153,10 @@
 
         <button onclick="multiplications2()">Таблица умнажения на 18</button>
         <div id="mult2"></div>
+
+        <button onclick="stocks()">Курс акций "НОВАТЭК"</button>
+        <table border="1" id="stocks-today"></table>
+        <div id="medi"></div>
 
     </main>
 </body>
